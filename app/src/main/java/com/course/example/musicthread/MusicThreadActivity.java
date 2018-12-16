@@ -55,8 +55,9 @@ public class  MusicThreadActivity extends Activity {
 				try {
 				//select Harvard stream
 				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
+					mp.setDataSource("http://stream.whrb.org:8000/whrb-he-aac");
 				//select BBC stream
-				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+				//mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 				mp.prepare();
 				mp.start();
 				} catch (IOException e) {};
