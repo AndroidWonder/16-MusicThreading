@@ -50,9 +50,10 @@ public class  MusicThreadActivity extends Activity {
     }
 
     Runnable background = new Runnable() {
-	   
+
 		public void run(){
 			mp = new MediaPlayer();
+
 				try {
 				//select Harvard stream
 				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
@@ -61,14 +62,14 @@ public class  MusicThreadActivity extends Activity {
 				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 
 				//select Russia
-					//mp.setDataSource("http://radio-electron.ru:8000/96");
+                    // mp.setDataSource("http://radio-electron.ru:8000/96");
 
-				mp.prepare();
+				mp.prepare();   // might take long! (for buffering, etc)
 				mp.start();
 				} catch (IOException e) {};
-						
+
 		}
-	}; 
-     
-    
+	};
+
+
 }
