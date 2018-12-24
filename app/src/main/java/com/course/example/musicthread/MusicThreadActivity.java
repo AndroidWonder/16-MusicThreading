@@ -12,6 +12,7 @@ package com.course.example.musicthread;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ public class  MusicThreadActivity extends Activity {
         					mp.stop();
         				}});
     }
-    
+
     Runnable background = new Runnable() {
 	   
 		public void run(){
@@ -55,9 +56,13 @@ public class  MusicThreadActivity extends Activity {
 				try {
 				//select Harvard stream
 				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
-					mp.setDataSource("http://stream.whrb.org:8000/whrb-he-aac");
+
 				//select BBC stream
-				//mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+
+				//select Russia
+					//mp.setDataSource("http://radio-electron.ru:8000/96");
+
 				mp.prepare();
 				mp.start();
 				} catch (IOException e) {};
