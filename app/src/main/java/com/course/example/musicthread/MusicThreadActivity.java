@@ -1,6 +1,8 @@
 /*
  * This example is set up to run an audio stream from the BBC.
  * It needs an Internet permission in the Manifest.
+ * Notice the Manifest application attribute: android:usesCleartextTraffic="true"
+ *
  * Alternatively, this example can stream from an mp3 file.
  * Make sure you have a music file in Android memory in the
  * directory data/data/  
@@ -58,10 +60,10 @@ public class  MusicThreadActivity extends Activity {
 
 				try {
 				//select Harvard stream
-				mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
+				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
 
 				//select BBC stream
-				//mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 
 				//select Russia
 				//	 mp.setDataSource("http://radio-electron.ru:8000/96");
