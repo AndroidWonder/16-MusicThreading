@@ -14,7 +14,7 @@ package com.course.example.musicthread;
 import java.io.IOException;
 
 import android.app.Activity;
-import android.media.AudioManager;
+import android.media.AudioAttributes;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.util.Log;
@@ -56,14 +56,18 @@ public class  MusicThreadActivity extends Activity {
 
 		public void run(){
 			mp = new MediaPlayer();
-			mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			mp.setAudioAttributes(
+					new AudioAttributes
+							.Builder()
+							.setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+							.build());
 
 				try {
 				//select Harvard stream
-				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
+				mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
 
 				//select BBC stream
-				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+				//mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 
 				//select Russia
 				//	 mp.setDataSource("http://radio-electron.ru:8000/96");
