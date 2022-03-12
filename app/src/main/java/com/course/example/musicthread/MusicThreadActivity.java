@@ -17,8 +17,6 @@ import android.app.Activity;
 import android.media.AudioAttributes;
 import android.os.Bundle;
 import android.media.MediaPlayer;
-import android.util.Log;
-import android.widget.Toast;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -64,10 +62,10 @@ public class  MusicThreadActivity extends Activity {
 
 				try {
 				//select Harvard stream
-				mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
+				//mp.setDataSource("http://stream.whrb.org:8000/whrb-mp3");
 
 				//select BBC stream
-				//mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
+				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 
 				//select Russia
 				//	 mp.setDataSource("http://radio-electron.ru:8000/96");
