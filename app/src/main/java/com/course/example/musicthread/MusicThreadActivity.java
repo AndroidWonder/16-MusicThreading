@@ -67,9 +67,6 @@ public class  MusicThreadActivity extends Activity {
 				//select BBC stream
 				mp.setDataSource("http://vprbbc.streamguys.net:80/vprbbc24.mp3");
 
-				//select Russia
-				//	 mp.setDataSource("http://radio-electron.ru:8000/96");
-
 				mp.prepare();   // might take long! (for buffering, etc)
 				mp.start();
 
