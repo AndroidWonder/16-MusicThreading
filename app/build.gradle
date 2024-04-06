@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 android {
     compileSdk 34
-    buildToolsVersion '34.0.0 rc2'
 
     defaultConfig {
         applicationId "com.course.example.musicthread"

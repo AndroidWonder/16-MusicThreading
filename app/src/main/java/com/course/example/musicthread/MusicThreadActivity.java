@@ -18,36 +18,28 @@ import android.media.AudioAttributes;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.widget.Button;
-import android.view.View;
-import android.view.View.OnClickListener;
-
 
 public class  MusicThreadActivity extends Activity {
 	
 	private MediaPlayer mp;
-    private Button button01, button02; 
-    private Thread musicThread;
+	private Thread musicThread;
         
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.main);
-        
-        button01 = (Button)findViewById(R.id.Button01);
-        button02 = (Button)findViewById(R.id.Button02);
+
+		Button button01 = (Button) findViewById(R.id.Button01);
+		Button button02 = (Button) findViewById(R.id.Button02);
              
         button01.setOnClickListener(
-        		new OnClickListener(){
-        				public void onClick(View v){
-        					musicThread = new Thread(background);
-        					musicThread.start();
-        				}});
+                v -> {
+                    musicThread = new Thread(background);
+                    musicThread.start();
+                });
         
         button02.setOnClickListener(
-        		new OnClickListener(){
-        				public void onClick(View v){
-        					mp.stop();
-        				}});
+                v -> mp.stop());
     }
 
     Runnable background = new Runnable() {
@@ -70,7 +62,7 @@ public class  MusicThreadActivity extends Activity {
 				mp.prepare();   // might take long! (for buffering, etc)
 				mp.start();
 
-				} catch (IOException e) {};
+				} catch (IOException e) {}
 
 		}
 	};
